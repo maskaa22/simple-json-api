@@ -45,4 +45,5 @@ DELETE
 
 
 #щоб запустити сервер
+npm i
 npm start
