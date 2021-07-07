@@ -2,13 +2,16 @@ const JSONdb = require('simple-json-db');
 const db = new JSONdb('todos.json');
 const {v4: uuidv4} = require('uuid');
 const bodyParser = require('body-parser')
+const cors = require('cors')
 
 const app = require('express')();
 
-const PORT = 8080
+const PORT = 8888
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
+
+app.use(cors())
 
 app.use((req,res,next) => {
 	setTimeout(next, 1000)
